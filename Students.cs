@@ -1,43 +1,115 @@
 ﻿using System;
-using System.Data;
-using System.Drawing;
+using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using Objects;
-using DataAccess;
+using System.Web;
 
-namespace Entekhab
+namespace Objects
 {
-    public partial class Students : Form
+    public class Students
     {
-        Students Objects;
-        public Student()
+	private int _ID;
+        public int ID
         {
-            InitializeComponent();
-        }
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            if(txtStudentID.Text!="" && txtStudentName.Text!="" && TrainID.Text!="")
+            get
             {
-                Fillobject();
-                DBStudents.INSERTStudents(Objects);
+                return _ID;
             }
-            else
+            set
             {
-                MessageBox.Show("اطلاعات را تکمیل نمایید.","خطا");
+                _ID = value;
             }
         }
-        private Fillobject()
+       
+        private string _StudentID;
+        public string StudentID
         {
-               Objects=new Students();
-               Objects.StudentID=txtStudentID.Text;
-               Objects.StudentName=txtStudentName.Text;
-               Objects.StudentFamily=txtStudentFamily.Text;
-               Objects.StudentPhone=txtStudentPhone.Text;
-               Objects.StudentAddress=txtStudentAddress.Text;
-               Objects.StudentGender=txtStudentGender.Text;
-               Objects.TrainID=int.Parse(TrainID.Text);
+            get
+            {
+                return _StudentID;
+            }
+            set
+            {
+                _StudentID = value;
+            }
+        }
+
+	private string _StudentName;
+        public string StudentName
+        {
+            get
+            {
+                return _StudentName;
+            }
+            set
+            {
+                _StudentName = value;
+            }
+        }
+        
+	private string _StudentFamily;
+        public string StudentFamily
+        {
+            get
+            {
+                return _StudentFamily;
+            }
+            set
+            {
+                _StudentFamily = value;
+            }
+        }
+
+	private string _StudentPhone;
+        public string StudentPhone
+        {
+            get
+            {
+                return _StudentPhone;
+            }
+            set
+            {
+                _StudentPhone = value;
+            }
+        }
+
+	private string _StudentAddress;
+        public string StudentAddress
+        {
+            get
+            {
+                return _StudentAddress;
+            }
+            set
+            {
+                _StudentAddress = value;
+            }
+        }
+
+	private string _StudentGender;
+        public string StudentGender
+        {
+            get
+            {
+                return _StudentGender;
+            }
+            set
+            {
+                _StudentGender = value;
+            }
+        }
+
+	private int _TrainID;
+        public int TrainID;
+        {
+            get
+            {
+                return _TrainID;
+            }
+            set
+            {
+                _TrainID;= value;
+            }
         }
     }
 }
+

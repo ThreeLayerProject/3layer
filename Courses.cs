@@ -1,42 +1,85 @@
 ﻿using System;
-using System.Data;
-using System.Drawing;
+using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using Objects;
-using DataAccess;
+using System.Web;
 
-namespace Entekhab
+namespace Objects
 {
-    public partial class Courses : Form
+    public class Courses
     {
-        Courses Objects;
-        public Course()
+	private int _ID;
+        public int ID
         {
-            InitializeComponent();
-        }
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            if(txtCourseID.Text!="" && txtCourseName.Text!="" && TrainID.Text!="")
+            get
             {
-                Fillobject();
-                DBCourses.INSERTCourses(Objects);
+                return _ID;
             }
-            else
+            set
             {
-                MessageBox.Show("اطلاعات را تکمیل نمایید.","خطا");
+                _ID = value;
             }
         }
-        private Fillobject()
+	private int _CourseID;
+        public int CourseID
         {
-               Objects=new Courses();
-               Objects.CourseID=int.Parse(txtCourseID.Text);
-               Objects.TrainID=int.Parse(TrainID.Text);
-               Objects.CourseName=txtCourseName.Text;
-               Objects.ClassTime=Convert.ToDateTime(ClassTime.Text);
-               Objects.ProfessorName=ProfessorName.Text;
-
+            get
+            {
+                return _CourseID;
+            }
+            set
+            {
+                _CourseID = value;
+            }
         }
+	private int _TrainID;
+        public int TrainID
+        {
+            get
+            {
+                return _TrainID;
+            }
+            set
+            {
+                _TrainID = value;
+            }
+        }
+	private string _CourseName;
+        public string CourseName
+        {
+            get
+            {
+                return _CourseName;
+            }
+            set
+            {
+                _CourseName = value;
+            }
+        }
+	private string _ProfessorName;
+        public string ProfessorName
+        {
+            get
+            {
+                return _ProfessorName;
+            }
+            set
+            {
+                _ProfessorName = value;
+            }
+        }
+	private DateTime _ClassTime;
+        public DateTime ClassTime
+        {
+            get
+            {
+                return _ClassTime;
+            }
+            set
+            {
+                _ClassTime = value;
+            }
+        }
+       
     }
 }
+
