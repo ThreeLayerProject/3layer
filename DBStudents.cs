@@ -56,7 +56,31 @@ namespace DataAccess
             cn.Dispose();
             return result;
         }
+        
+        //Delete code
+        static public int DELETEStudent(string id)
+        {
+            int result = -1;
 
+            SqlConnection cn = GetSqlConnection();
+            cn.Open();
+
+            string sqlQuery = "DELETE * FROM Students WHERE StudentID=@StudentID ";
+
+
+            SqlCommand Mycmd = new SqlCommand(sqlQuery, cn);
+
+            Mycmd.Parameters.AddWithValue("@StudentID", SqlDbType.NVarChar).Value = id;
+
+            result = Mycmd.ExecuteNonQuery();
+
+
+            cn.Close();
+            cn.Dispose();
+            return result;
+
+        }
+        
         static public int INSERTStudents(Students Object)
         {
             int result = -1;
