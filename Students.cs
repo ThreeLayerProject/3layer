@@ -28,6 +28,20 @@ namespace Entekhab
                 MessageBox.Show("اطلاعات را تکمیل نمایید.","خطا");
             }
         }
+        
+        //Delete
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            if (txtDELETEStudentID.Text != "")
+            {
+                Fillobject();
+                DBStudents.DELETEStudent(txtDELETEStudentID.Text);
+            }
+            else
+            {
+                MessageBox.Show("اطلاعات را تکمیل نمایید.", "خطا");
+            }
+        }
         private Fillobject()
         {
                Objects=new Students();
